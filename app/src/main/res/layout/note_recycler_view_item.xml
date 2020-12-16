@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_container"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/cat_card_single_spacing"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mtrl_card_spacing"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:focusable="true"
+        android:minHeight="@dimen/cat_card_rich_media_demo_min_height">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cat_card_double_spacing"
+                android:paddingBottom="@dimen/cat_card_single_spacing">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/cat_card_single_spacing"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/cat_card_single_spacing">
+
+                    <TextView
+                        android:id="@+id/title_of_recycler_view"
+                        style="?attr/textAppearanceHeadline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cat_card_rich_media_view_title" />
+
+                    <TextView
+                        android:id="@+id/date_of_note_taken_recycler_view_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/cat_card_single_spacing"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="@string/cat_card_rich_media_view_secondary_line_text" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/image_of_recycler_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="@dimen/cat_card_single_spacing"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/cat_card_rich_media_image_view_description"
+                    app:backgroundTint="@color/material_on_surface_emphasis_medium"
+                    app:backgroundTintMode="add"
+                    app:srcCompat="@drawable/ic_components_24px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|end"
+                android:orientation="horizontal"
+                android:padding="@dimen/cat_card_single_spacing"
+                android:paddingHorizontal="@dimen/cat_card_single_spacing">
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/note_recycler_view_item_toggle_button_group"
+                    app:selectionRequired="false"
+                    app:singleSelection="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <Button
+                        android:id="@+id/note_recycler_view_item_speak_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_baseline_campaign_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly" />
+
+
+                    <Button
+                        android:id="@+id/note_recycler_view_item_download_audio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_baseline_arrow_circle_down_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly" />
+
+                    <Button
+                        android:id="@+id/note_recycler_view_item_download_pdf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_baseline_picture_as_pdf_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly" />
+
+
+                    <Button
+                        android:id="@+id/note_recycler_view_item_copy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_baseline_content_copy_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly" />
+
+                    <Button
+                        android:id="@+id/note_recycler_view_item_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_baseline_share_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly" />
+
+                    <Button
+                        android:id="@+id/note_recycler_view_item_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_baseline_delete_forever_24"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly" />
+
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

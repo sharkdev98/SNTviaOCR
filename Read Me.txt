@@ -1,0 +1,18 @@
+Google Sign In Apis are configured with shar...z111@gmail.com
+Max SDK = 30 (Android R)
+Min SDK = 28 (Android Pie)
+package name = "com.example.sntviaocr"
+Dump all non used activities
+Jugari Code
+All Requirements DONE
+
+	1.	Create a Splash Screen when App loads.
+	2.	Create secure Login screen for user to access app features.
+	3.	Scan & extract text from images instantly.
+	4.	Scanned images text should be saved in database.
+	5.	User should be able to edit or copy the extracted text.
+	6.	User should be able to copy the entire extracted text.
+	7.	User should be able to share the entire extracted text to any of your apps.
+	8.	User should be able to download Scanned Images as pdf file.
+	9.	Text To Speech (TTS) service. Convert Extracted any text into MP3 audio file.
+	10.	Make App Ready to publish on Google Play

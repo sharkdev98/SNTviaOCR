@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- splash_screen strings -->
+
+    <string name="app_name">SNTviaOCR</string>
+    <string name="snt_via_ocr">Smart Note</string>
+    <string name="refresh">Refresh</string>
+    <string name="search">Search</string>
+    <string name="cat_bottomappbar_navigation_button_content_description">Navigation Drawer Button</string>
+    <string name="add_word">FAB</string>
+
+    <string name="hint_word">Word...</string>
+    <string name="button_save">Save Note</string>
+    <string name="empty_not_saved">Note not saved because some fields are empty.</string>
+    <string name="title">Title</string>
+    <string name="note_taking_date_time">Note Taking Date Time</string>
+    <string name="share">Share</string>
+    <string name="speak">Speak</string>
+    <string name="again">Again</string>
+    <string name="image_of_text_content">Image of Text Content</string>
+    <string name="cat_card_rich_media_view_title">Title goes here</string>
+    <string name="cat_card_rich_media_view_secondary_line_text">Secondary line text Lorem ipsum dolor sit amet, nec no nominavi scaevola. Per et sint sapientem, nobis perpetua salutandi mei te.</string>
+    <string name="cat_card_rich_media_image_view_description">Card Image</string>
+    <string name="cat_card_rich_media_action_1">Copy</string>
+    <string name="cat_card_rich_media_action_2">Delete</string>
+    <string name="cat_card_swipe_dismiss" description="the title of a screen where you can swipe to dismiss a card [CHAR LIMIT=20]">Card Swipe Dismiss</string>
+    <string name="cat_card_dismissed" description="a transient text that appears on screen when a card is dismissed [CHAR LIMIT=30]">Card Dismissed</string>
+    <string name="cat_card_undo" description="A label in a button to dismiss the last action [CHAR LIMIT=15]">Undo</string>
+
+</resources>

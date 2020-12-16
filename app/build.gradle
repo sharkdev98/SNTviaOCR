@@ -1,0 +1,196 @@
+apply plugin: 'com.android.application'
+
+android {
+//    if(project.hasProperty("devBuild")){
+//        splits.abi.enable = false
+//        splits.density.enable = false
+//        aaptOptions.cruncherEnabled = false
+//        ext.alwaysUpdateBuildId = false
+//    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+//    dexOptions{
+//        maxProcessCount 4
+//        javaMaxHeapSize "4g"
+//    }
+
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    splits {
+//        density {
+//            enable true
+//            // Specify a list of screen densities which Gradle won't create multiple APKs for
+//            exclude 'ldpi', 'mdpi'
+//            // Specify a list of compatible screen size for the manifest
+//            compatibleScreens 'small', 'normal', 'large', 'xlarge'
+//        }
+//        abi {
+//            enable true
+//            reset()
+//            // Specify a list of ABIs that Gradle should create APKs for
+//            include  'arm64-v8a', 'armeabi-v7a'//, 'x86', 'x86_64'
+//            // If you don’t want to generate a universal APK that includes all ABIs.
+//            universalApk false
+//        }
+//    }
+    defaultConfig {
+        applicationId "com.example.sntviaocr"
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+//        multiDexEnabled false
+//        resConfigs 'en', 'th'
+//        resConfigs('en', 'xhdpi')
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+
+    }
+
+    buildTypes {
+//        release {
+//            signingConfig signingConfigs.debug
+//            useProguard false
+//            minifyEnabled false
+//            shrinkResources false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//        debug {
+//            splits.abi.enable = false
+//            splits.density.enable = false
+//            aaptOptions.cruncherEnabled = false
+//            ext.alwaysUpdateBuildId = false
+//        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.mediarouter:mediarouter:1.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.0.0'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.github.florent37:hollyviewpager:1.0.1'
+    implementation 'me.drakeet.support:toastcompat:1.1.0'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.makeramen:roundedimageview:2.0.1'
+    implementation 'com.jsibbold:zoomage:1.3.1-SNAPSHOT'
+
+
+
+
+
+
+    def appCompatVersion = '1.2.0'
+    def constraintLayoutVersion = '2.0.2'
+    def coreTestingVersion = '2.1.0'
+    def lifecycleVersion = '2.2.0'
+    def materialVersion = '1.2.1'
+    def roomVersion = '2.2.5'
+    // testing
+    def junitVersion = '4.13.1'
+    def espressoVersion = '3.1.0'
+    def androidxJunitVersion = '1.1.2'
+
+
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+
+    // Dependencies for working with Architecture components
+    // You'll probably have to update the version numbers in build.gradle (Project)
+
+    // Room components
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+
+    // UI
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+
+    // Testing
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
+    androidTestImplementation ("androidx.test.espresso:espresso-core:$espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+
+
+
+    //ROOM Sqlite Anstract Class
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+
+
+
+
+    //Picasso A powerful image downloading and caching library for Android
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //Recognize text in images with ML Kit on Android
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.1'
+
+    //Sweet Alert Dialog
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
+
+    //lottie
+    implementation "com.airbnb.android:lottie:3.4.4"
+
+    def htextview_version = "0.1.6"
+// as 3.0 use implementation
+    implementation "com.hanks:htextview-base:$htextview_version"        // base library
+
+    implementation "com.hanks:htextview-fade:$htextview_version"        // optional
+    implementation "com.hanks:htextview-line:$htextview_version"        // optional
+    implementation "com.hanks:htextview-rainbow:$htextview_version"     // optional
+    implementation "com.hanks:htextview-typer:$htextview_version"       // optional
+
+    implementation "com.hanks:htextview-scale:$htextview_version"       // optional
+    implementation "com.hanks:htextview-evaporate:$htextview_version"   // optional
+    implementation "com.hanks:htextview-fall:$htextview_version"        // optional
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+}

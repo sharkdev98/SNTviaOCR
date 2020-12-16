@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:menu="@menu/edit_note_menu"
+    tools:context=".ApplicationLayer.Notes.EditViewOfNote">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/edit_note_toolbar"
+            app:menu="@menu/edit_note_menu"
+            android:layout_width="match_parent"
+            app:titleTextColor="@color/white"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/actionButtonTheme"
+            app:layout_scrollFlags="snap"
+            app:title="New Note" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:weightSum="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.01"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:text="@string/note_taking_date_time"
+                android:textSize="15sp"
+                android:gravity="left|start|center_vertical"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/edit_note_view_date_time_stored"
+                android:gravity="right|end|center_vertical"
+                android:textSize="15sp"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_baseline_title_24"
+                android:contentDescription="@string/title"
+                android:hint="@string/title">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_note_view_title"
+                    android:clickable="true"
+                    tools:text="Example"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.45"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_baseline_title_24"
+                android:contentDescription="@string/title"
+                android:hint="@string/title">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_note_view_text"
+                    android:clickable="true"
+                    tools:text="Example"
+                    android:gravity="top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_weight="0.53"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <com.jsibbold.zoomage.ZoomageView
+                android:id="@+id/edit_note_view_image_zoomageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:zoomage_restrictBounds="false"
+                app:zoomage_animateOnReset="true"
+                app:zoomage_autoResetMode="UNDER"
+                app:zoomage_autoCenter="true"
+                app:zoomage_zoomable="true"
+                app:zoomage_doubleTapToZoom="true"
+                app:zoomage_translatable="true"
+                app:zoomage_minScale="0.6"
+                app:zoomage_maxScale="8"
+                android:scaleType="fitCenter" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="0.01"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/edit_note_view_cancel_button"
+                android:text="Cancel"
+                android:layout_weight="0.5"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/edit_note_view_save_button"
+                android:text="Save"
+                android:layout_weight="0.5"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<resources>
+
+
+	<color name="primaryColor">#303f9f</color>
+	<color name="primaryLightColor">#666ad1</color>
+	<color name="primaryDarkColor">#001970</color>
+	<color name="secondaryColor">#9ea7d8</color>
+	<color name="secondaryLightColor">#d0d8ff</color>
+	<color name="primaryTextColor">#ffffff</color>
+	<color name="secondaryTextColor">#000000</color>
+
+	<color name="black">#000000</color>
+	<color name="white">#FFFFFF</color>
+
+	<color name="buttonLabel">#FFFFFF</color>
+
+	<color name="yellow_500">#ffde03</color>
+	<color name="blue_700">#0336ff</color>
+	<color name="red_500">#ff0266</color>
+	<integer-array name="cat_custom_progress_colors">
+		<item>@color/yellow_500</item>
+		<item>@color/blue_700</item>
+		<item>@color/red_500</item>
+	</integer-array>
+
+	<!--Light Background Dark Text-->
+
+	<!--Dark Background Light Text-->
+</resources>
