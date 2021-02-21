@@ -41,10 +41,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class BasicActivityClass extends AppCompatActivity implements ICallback {
     protected static int                  activityNumber;
-    protected static Activity             activity;
-    protected static GoogleSignInClient   mGoogleSignInClient;
+    protected  Activity             activity;
+    protected  GoogleSignInClient   mGoogleSignInClient;
     protected static GoogleSignInOptions  mGoogleSignInOptions;
     protected static GoogleSignInAccount  account;
+    protected static String display_name;
     private static Animation anim_fade_out, anim_fade_in;
     public static RecyclerView recyclerView;
     public static NoteListAdapter noteListAdapter;
@@ -55,7 +56,7 @@ public abstract class BasicActivityClass extends AppCompatActivity implements IC
     public static String email_address;
     public static Note ClickedNote;
     public static int observerCounter = 0;
-    public static MutableLiveData<Integer> NoteIdClicked = new MutableLiveData<Integer>();
+    public static MutableLiveData<Integer> NoteIdClicked = new MutableLiveData<>();
 
 
     public static void shareText(Context context , String subject, String body) {
@@ -72,11 +73,7 @@ public abstract class BasicActivityClass extends AppCompatActivity implements IC
         AlertDialog.Builder AlertDialogBuilder = new AlertDialog.Builder(rActivity)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
+                .setPositiveButton("OK", (dialog, which) -> {
                 });
         AlertDialogBuilder.create().show();
     }
@@ -93,11 +90,7 @@ public abstract class BasicActivityClass extends AppCompatActivity implements IC
                 urlc.setRequestProperty("Connection", "close");
                 urlc.setConnectTimeout(1000); // mTimeout is in seconds
                 urlc.connect();
-                if (urlc.getResponseCode() == 200) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return urlc.getResponseCode() == 200;
             } catch (IOException e) {
                 Log.i("warning", "Error checking internet connection", e);
                 return false;
@@ -166,22 +159,12 @@ public abstract class BasicActivityClass extends AppCompatActivity implements IC
 
     public void signOut() {
         mGoogleSignInClient.signOut()
-                .addOnCompleteListener( this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        UpdateUI(null);
-                    }
-                });
+                .addOnCompleteListener( this, task -> UpdateUI(null));
     }
 
     public void revokeAccess() {
         mGoogleSignInClient.revokeAccess()
-                .addOnCompleteListener( this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        UpdateUI(null);
-                    }
-                });
+                .addOnCompleteListener( this, task -> UpdateUI(null));
     }
 
     public void handleSignInResult(Task<GoogleSignInAccount> completedTask) {

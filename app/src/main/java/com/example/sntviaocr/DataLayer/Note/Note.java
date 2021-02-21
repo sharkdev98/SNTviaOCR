@@ -6,7 +6,10 @@ import android.graphics.BitmapFactory;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+
+import com.example.sntviaocr.DataLayer.User.User;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
@@ -18,15 +21,14 @@ import static androidx.room.ColumnInfo.TEXT;
 public class Note implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
-    @NonNull
     @ColumnInfo(name = "NoteId",typeAffinity = INTEGER)
     public int NoteId = 0;
 
     @ColumnInfo(name = "Title", typeAffinity = TEXT)
-    public String Title = "";
+    public String Title ;
 
     @ColumnInfo(name = "Content", typeAffinity = TEXT)
-    public String Content = "";
+    public String Content;
 
     @ColumnInfo(name = "CapturedImagePath" , typeAffinity = TEXT)
     public String CapturedImagePath;
@@ -35,10 +37,10 @@ public class Note implements Serializable {
     public String CapturedImageThumbnailPath;
 
     @ColumnInfo(name = "CapturedImageDateTime", typeAffinity = TEXT)
-    public String CapturedImageDateTime = "";
+    public String CapturedImageDateTime;
 
     @ColumnInfo(name = "user_email", typeAffinity = TEXT)
-    public String user_email = "";
+    public String user_email;
 
     public static byte[] setCapturedImage(@NonNull Bitmap rCapturedImage) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();

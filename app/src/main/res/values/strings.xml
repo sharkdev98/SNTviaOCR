@@ -9,7 +9,7 @@
     <string name="cat_bottomappbar_navigation_button_content_description">Navigation Drawer Button</string>
     <string name="add_word">FAB</string>
 
-    <string name="hint_word">Word...</string>
+    <string name="hint_word">Word…</string>
     <string name="button_save">Save Note</string>
     <string name="empty_not_saved">Note not saved because some fields are empty.</string>
     <string name="title">Title</string>
@@ -26,5 +26,11 @@
     <string name="cat_card_swipe_dismiss" description="the title of a screen where you can swipe to dismiss a card [CHAR LIMIT=20]">Card Swipe Dismiss</string>
     <string name="cat_card_dismissed" description="a transient text that appears on screen when a card is dismissed [CHAR LIMIT=30]">Card Dismissed</string>
     <string name="cat_card_undo" description="A label in a button to dismiss the last action [CHAR LIMIT=15]">Undo</string>
-
+    <string name="fab">FAB</string>
+    <string name="captured_picture">Captured Picture</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="logout">LogOut</string>
+    <string name="help">Help</string>
+    <string name="log_out">Log Out</string>
+    <string name="help_text">Help Text : \t\n1) First Capture any image which contains text. \t\n2) This App extract text from image. \t\n3) Now you can share, edit, copy, listen, and download pdf file of captured text</string>
 </resources>

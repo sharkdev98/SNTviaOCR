@@ -8,7 +8,7 @@ android {
 //        ext.alwaysUpdateBuildId = false
 //    }
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
 //    dexOptions{
 //        maxProcessCount 4
@@ -83,25 +83,25 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.mediarouter:mediarouter:1.2.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.1'
-    implementation 'androidx.navigation:navigation-ui:2.3.1'
-    implementation 'androidx.recyclerview:recyclerview-selection:1.0.0'
+    implementation 'androidx.mediarouter:mediarouter:1.2.2'
+    implementation 'androidx.navigation:navigation-fragment:2.3.3'
+    implementation 'androidx.navigation:navigation-ui:2.3.3'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.florent37:hollyviewpager:1.0.1'
     implementation 'me.drakeet.support:toastcompat:1.1.0'
-    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.makeramen:roundedimageview:2.0.1'
     implementation 'com.jsibbold:zoomage:1.3.1-SNAPSHOT'
@@ -114,9 +114,9 @@ dependencies {
     def appCompatVersion = '1.2.0'
     def constraintLayoutVersion = '2.0.2'
     def coreTestingVersion = '2.1.0'
-    def lifecycleVersion = '2.2.0'
+    def lifecycleVersion = '2.3.0'
     def materialVersion = '1.2.1'
-    def roomVersion = '2.2.5'
+    def roomVersion = '2.2.6'
     // testing
     def junitVersion = '4.13.1'
     def espressoVersion = '3.1.0'
@@ -153,7 +153,7 @@ dependencies {
 
 
     //ROOM Sqlite Anstract Class
-    def room_version = "2.2.5"
+    def room_version = "2.2.6"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     // optional - RxJava support for Room
@@ -170,7 +170,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Recognize text in images with ML Kit on Android
-    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.1'
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.3'
 
     //Sweet Alert Dialog
     implementation 'com.github.f0ris.sweetalert:library:1.6.2'
@@ -192,5 +192,8 @@ dependencies {
     implementation "com.hanks:htextview-fall:$htextview_version"        // optional
 
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    implementation 'com.google.android.gms:play-services-ads:19.7.0'
+
 
 }

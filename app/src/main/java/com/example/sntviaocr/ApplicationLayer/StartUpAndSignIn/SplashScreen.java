@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowInsets;
@@ -25,8 +26,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.Task;
 
+import java.util.Objects;
+
 public class SplashScreen extends BasicActivityClass implements View.OnClickListener {
 
+    private static final String TAG = "SplashScreen";
     private ActivitySplashScreenBinding activitySplashScreenBinding;
     private LottieList lottieList;
 
@@ -85,7 +89,7 @@ public class SplashScreen extends BasicActivityClass implements View.OnClickList
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if(NoteViewHolder.speaking == true)
+        if(NoteViewHolder.speaking)
         {
             BasicActivityClass.stopSpeaking();
         }
@@ -100,13 +104,15 @@ public class SplashScreen extends BasicActivityClass implements View.OnClickList
 
     @Override
     public void UpdateUI(GoogleSignInAccount account) {
-        if(isNetworkConnected(this));
-        else {
+        if(isNetworkConnected(this)) {
+            Log.d(TAG, "UpdateUI: " + "Network is Connected");
+        } else {
             ShowMessage("Error","Network not Available !" , this);
             return;
         }
         if(account != null){
             BasicActivityClass.email_address = account.getEmail();
+            BasicActivityClass.display_name =  account.getDisplayName();
             Intent signInToMainIntent = new Intent(SplashScreen.this, MainNotesDashboard.class);
             startActivity(signInToMainIntent);
             finish();
@@ -128,14 +134,10 @@ public class SplashScreen extends BasicActivityClass implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
-            case R.id.sign_in_button:
-                activitySplashScreenBinding.animationView.setVisibility(View.INVISIBLE);
-                activitySplashScreenBinding.splashAppName.setVisibility(View.INVISIBLE);
-                signIn();
-                break;
-            default:break;
+        if (v.getId() == R.id.sign_in_button) {
+            Objects.requireNonNull(activitySplashScreenBinding.animationView).setVisibility(View.INVISIBLE);
+            Objects.requireNonNull(activitySplashScreenBinding.splashAppName).setVisibility(View.INVISIBLE);
+            signIn();
         }
     }
 }
