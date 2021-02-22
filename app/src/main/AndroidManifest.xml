@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sntviaocr">
+    package="com.sharkdev98.smartnotetakerviaocr">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,12 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ApplicationLayer.Notes.HelpActivity"></activity>
-        <activity android:name=".ApplicationLayer.Notes.EditAnySaveNoteActivity" />
-        <activity android:name=".ApplicationLayer.Notes.EditViewOfNote" />
-        <activity android:name=".ApplicationLayer.Notes.MainNotesDashboard" />
+        <activity android:name="com.sharkdev98.smartnotetakerviaocr.ApplicationLayer.Notes.HelpActivity" />
+        <activity android:name="com.sharkdev98.smartnotetakerviaocr.ApplicationLayer.Notes.EditAnySaveNoteActivity" />
+        <activity android:name="com.sharkdev98.smartnotetakerviaocr.ApplicationLayer.Notes.EditViewOfNote" />
+        <activity android:name="com.sharkdev98.smartnotetakerviaocr.ApplicationLayer.Notes.MainNotesDashboard" />
         <activity
-            android:name=".ApplicationLayer.StartUpAndSignIn.SplashScreen"
+            android:name="com.sharkdev98.smartnotetakerviaocr.ApplicationLayer.StartUpAndSignIn.SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
@@ -47,12 +47,12 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.sntviaocr.fileprovider"
+            android:authorities="com.sharkdev98.smartnotetakerviaocr.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
         </provider>
     </application>
 

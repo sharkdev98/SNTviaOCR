@@ -1,7 +1,7 @@
 Google Sign In Apis are configured with shar...z111@gmail.com
 Max SDK = 30 (Android R)
 Min SDK = 28 (Android Pie)
-package name = "com.example.sntviaocr"
+package name = "sharkdev98.smartnotetakerviaocr"
 Dump all non used activities
 Jugari Code
 All Requirements DONE
